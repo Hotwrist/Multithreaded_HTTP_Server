@@ -58,25 +58,25 @@ Quick start
    
 ## Server.c
 
-    This is the server file. It handles socket connection from clients, accepts the client connection and server
-    the requested file to the client.
+   This is the server file. It handles socket connection from clients, accepts the client connection and server
+   the requested file to the client.
 	
-    The functions available in the file are:
+   The functions available in the file are:
 	
-    **date_func** : This handles the creation of date and time.
-    **response** : Constructs the server response message.
-    **send_302** : Sends a *302 Found* message to the client when the path is a directory but does not end with a /.
-    **send _400** : Sends a *400 Bad Request* message to the client when the client gives a bad request.
-    **send_403** : Sends a *403 Forbidden message* when the client tries to access a file he/she has no read permission on.
-    **send_404** : Sends a *404 Not Found* message when the requested path does not exist.
-    **send_500** : Sends a *500 Internal Server Error* when there is a failure after connection with a client
-    and if the error is due to some server side error.
-    **send_501** : Sends a *501 Not Supported* message when the method is not a GET method. This is because
-    the server only supports the GET method.
-    **send_dir_content** : Sends a message by displaying the directory content when the index.html file is not found. 
-    **get_mime_type** : Gets the file type based on the file extension.
-    **create_socket** : This creates a listening socket for the server to listen for incoming client connections.
-    **read_client_request** : Reads the client request into a request buffer.
-    **serve_resource** : This function serves the requested file based on the client request to the client.
-    **handle_socket_thread** : This function handles the socket thread. This function is passed to the dispatch function, which
-    is then added to the work_t structure as a task or job awaiting to be handled by an available thread.
+   **date_func** : This handles the creation of date and time.
+   **response** : Constructs the server response message.
+   **send_302** : Sends a *302 Found* message to the client when the path is a directory but does not end with a /.
+   **send _400** : Sends a *400 Bad Request* message to the client when the client gives a bad request.
+   **send_403** : Sends a *403 Forbidden message* when the client tries to access a file he/she has no read permission on.
+   **send_404** : Sends a *404 Not Found* message when the requested path does not exist.
+   **send_500** : Sends a *500 Internal Server Error* when there is a failure after connection with a client
+   and if the error is due to some server side error.
+   **send_501** : Sends a *501 Not Supported* message when the method is not a GET method. This is because
+   the server only supports the GET method.
+   **send_dir_content** : Sends a message by displaying the directory content when the index.html file is not found. 
+   **get_mime_type** : Gets the file type based on the file extension.
+   **create_socket** : This creates a listening socket for the server to listen for incoming client connections.
+   **read_client_request** : Reads the client request into a request buffer.
+   **serve_resource** : This function serves the requested file based on the client request to the client.
+   **handle_socket_thread** : This function handles the socket thread. This function is passed to the dispatch function, which
+   is then added to the work_t structure as a task or job awaiting to be handled by an available thread.
